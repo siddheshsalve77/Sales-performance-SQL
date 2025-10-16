@@ -1,116 +1,113 @@
-# 📊 Superstore Sales Performance Analysis
+📊 Superstore Sales Performance Analysis (PostgreSQL & SQL)
 
-This project presents a comprehensive sales analysis for a fictional Superstore using **SQL** and **Power BI**. It showcases how to clean, process, analyze, and visualize sales data to derive meaningful business insights and inform strategic decision-making.
+This repository contains a complete workflow for sales data analysis using PostgreSQL (SQL) with import from Excel, advanced analytics, and business insights extraction. The project simulates analysis for a fictional Superstore, demonstrating both practical SQL techniques and real-world problem solving.
 
----
+🧾 Project Overview
 
-## 🧾 Project Overview
+Objective:
+Analyze Superstore sales data using SQL in PostgreSQL to uncover trends, performance, and actionable business insights for strategic decision making.
 
-The objective of this project is to analyze the Superstore sales data to understand customer behavior, product performance, profit trends, and regional variations. SQL is used for data cleaning, aggregation, and deriving KPIs. Power BI is used to build an interactive dashboard to visualize trends and insights.
+Data imported, cleaned, and transformed using PostgreSQL
 
----
+Core and advanced SQL queries for KPI extraction and pattern discovery
 
-## 🛠️ Tools Used
+Insights applicable for retail analytics, customer segmentation, and profitability improvements
 
-- **SQL Server** — For querying, aggregation, and KPI extraction  
-  👉 [SQL Code](./Superstore_Sales_Analysis.sql)
-- **Power BI** — For data visualization and dashboarding  
-  👉 [Dashboard Screenshot](./Superstore_Sales_Data_Analysis.png)
-- **Excel** — Raw dataset in spreadsheet format  
-  👉 [Dataset File](./DataSet/Superstore_Orders_Data.xlsx)
+🛠️ Tools Used
 
----
+PostgreSQL (via pgAdmin/psql) — Database creation, import, and all data analysis queries
 
-## 📂 Dataset Description
+Excel — Initial data cleaning and CSV export
 
-The dataset contains transactional sales data for a retail store, including the following columns:
+VS Code/Text Editor — For query writing, data inspection, and documentation
 
-| Column Name       | Description |
-|-------------------|-------------|
-| `Order ID`        | Unique identifier for each order |
-| `Order Date`      | Date the order was placed |
-| `Ship Date`       | Date the order was shipped |
-| `Ship Mode`       | Shipping category (Standard, Second Class, etc.) |
-| `Customer ID`     | Unique ID for customers |
-| `Customer Name`   | Name of the customer |
-| `Segment`         | Customer type (Consumer, Corporate, Home Office) |
-| `Country/Region/City/State` | Location data |
-| `Product ID`      | Unique identifier for products |
-| `Category`        | Product category |
-| `Sub-Category`    | Product sub-category |
-| `Product Name`    | Name of the product |
-| `Sales`           | Total sales amount |
-| `Quantity`        | Quantity sold |
-| `Discount`        | Discount applied |
-| `Profit`          | Profit gained/lost |
+(Optional) Power BI/Other BI Tool — For further visualization, if needed
 
----
+📂 Dataset Description
 
-## ❓ Questions Answered Using SQL
+Source: Fictional retail Superstore sales data (Excel/CSV)
+Columns:
+row_id | Unique row identifier
+order_id | Unique order code
+order_date | Date order was placed
+ship_date | Date order shipped
+ship_mode | Ship category (Standard, Second Class...)
+customer_id | Customer's unique ID
+customer_name | Name of customer
+segment | Customer segment
+country | Country of customer
+city | City
+state | State
+postal_code | Zip/Postal code
+region | Region
+product_id | Unique product identifier
+category | Product category
+sub_category | Product sub-category
+sales | Sales amount
+quantity | Number of units sold
+discount | Discount applied
+profit | Profit earned (can be negative)
 
-### ✅ Basic Queries:
-1. Total sales, profit, and quantity
-2. Unique values in categories, segments, ship modes
-3. Monthly & yearly sales summary
-4. Top-selling products by quantity and sales
-5. Customers who ordered only once
+Note: The product_name column was removed for clean import due to formatting issues (escaped quotes).
 
-### 🔁 Intermediate Queries:
-1. Sales and profit by region, category, and segment
-2. Discount impact on profitability
-3. Sales by sub-category and product
-4. Profit margin % by category
-5. Shipping mode usage frequency
+🗂️ Project Structure
 
-### 🔍 Advanced Queries:
-1. Monthly growth rate using `LAG()` window function
-2. Top profitable product by region using `RANK()`
-3. Bottom 10 loss-making products
-4. Trend of customer orders over time
-5. Advanced customer segmentation by order count
+/
+├── data/ # CSV/Excel files
+├── sql/ # SQL schema and analysis queries
+├── screenshots/ # pgAdmin query and result screenshots
+├── README.md # Project documentation
 
----
+❓ Questions Answered with SQL
 
-## 📈 Key Insights
+Fundamental Analysis
 
-- 📦 **Technology** category generated the highest sales overall.
-- 💰 Profit margins are highest in the **Office Supplies** segment.
-- 🌎 The **West** region outperformed other regions in both sales and profit.
-- 📉 Some products consistently lead to losses and need review.
-- 🚚 **Standard Class** is the most used ship mode, covering nearly 59% of total orders.
-- 📅 Sales peak during **November and December**, suggesting holiday season surges.
-- 📉 Discounts above 30% often result in negative profits.
+Total sales, profit, and quantities
 
----
+Top selling states, regions, and segments
 
-## ✅ Power BI Dashboard Highlights
+Monthly, quarterly, and yearly sales trends
 
-- Sales & profit breakdown by **Category**, **Region**, and **Quarter**
-- Monthly sales trend with comparative quantity movement
-- Interactive filters for **Region**, **Year**, and **Segment**
-- Top and bottom products by sales/profit
-- Relationship visualization between **Sales** and **Profit**
-- Donut charts and treemaps for quick glances
+Most/least profitable orders
 
-> 📍 *See Power BI dashboard screenshots [here](./Superstore_Sales_Data_Analysis.png).*
+Advanced Analytics (SQL Window Functions)
 
----
+Year-on-year and monthly growth rates
 
-## 🏁 Conclusion
+Quarterly and seasonal sales comparisons
 
-This project successfully demonstrates the power of combining SQL and Power BI for business analytics. It reveals vital insights on sales performance, customer behavior, discount efficiency, and regional trends. These insights can be leveraged for better inventory management, targeted marketing, and profit optimization.
+Customer repeat purchase behavior
 
----
+Aggregate trend lines and moving averages
 
+Discount impact and margin analysis
 
----
+Example Advanced Queries
 
-## 📬 Contact
+Cumulative profit over time
 
-**Author**: Mohan Kumar  
-**Mail**: mohan122000kumar@gmail.com
+Top regions/products by ranking
 
----
+Loss-making transactions
 
-⭐ *Feel free to fork or star this repo if you found it useful!*
+Segment-based performance trends
 
+📈 Key Insights
+
+Technology category and West region consistently outperform others.
+
+High discounts strongly correlate with lower or negative profits.
+
+Holiday months (Nov/Dec) show peak sales volumes.
+
+Significant number of loss-making orders need further investigation.
+
+🏁 Conclusion
+
+This project demonstrates the use of PostgreSQL and SQL for practical business analysis—from initial data wrangling to KPIs and trend discovery. It offers a template for retail businesses to measure performance and optimize profitability directly within modern databases.
+
+📬 Contact
+
+Author: Siddhesh Salve
+GitHub: siddheshsalve77 (https://github.com/siddheshsalve77)
+Email: siddhesh.salve77@gmail.com
